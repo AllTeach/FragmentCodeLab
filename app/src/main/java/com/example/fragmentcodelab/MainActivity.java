@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,20 +33,24 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        SimpleFragment simpleFragment = SimpleFragment.newInstance();
+      //  SimpleFragment simpleFragment = new SimpleFragment();
         // Get the FragmentManager and start a transaction.
+
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager
                 .beginTransaction();
 
-        // Add the SimpleFragment.
-        fragmentTransaction.add(R.id.fragment_container,
-                simpleFragment).addToBackStack(null).commit();
-// Update the Button text.
-        mButton.setText("close fragment");
-// Set boolean flag to indicate fragment is open.
-        isFragmentDisplayed = true;
 
+        // Add fragment to the back stack
+        // back button triggers fragment transaction
+        fragmentTransaction.add(R.id.fragment_container,
+                SimpleFragment.class,null)
+                .setReorderingAllowed(true).addToBackStack(null).commit();
+        // Update the Button text.
+        mButton.setText("close fragment");
+    // Set boolean flag to indicate fragment is open.
+        isFragmentDisplayed = true;
 
     }
     public void closeFragment() {
@@ -58,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
             // Create and commit the transaction to remove the fragment.
             FragmentTransaction fragmentTransaction =
                     fragmentManager.beginTransaction();
+            fragmentTransaction.remove(simpleFragment).commit();
+
 
 
         }
@@ -67,4 +74,20 @@ public class MainActivity extends AppCompatActivity {
         isFragmentDisplayed = false;
     }
 
+    public void moveToAnotherExample(View view) {
+        Intent intent = new Intent(this,AnotherFragmentExample.class);
+        startActivity(intent);
+    }
+
+    public void moveToTabbedActivity(View view) {
+        Intent intent = new Intent(this,TabFragmentActivity.class);
+        startActivity(intent);
+    }
+
+    public void moveToSwipeActivity(View view)
+    {
+        Intent intent = new Intent(this,SwipeNavActivity.class);
+        startActivity(intent);
+
+    }
 }

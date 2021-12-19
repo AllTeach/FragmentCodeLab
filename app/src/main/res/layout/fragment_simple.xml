@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@color/my_fragment_color"
+    android:background="#B9F8CF"
     tools:context=".SimpleFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/fragment_header"
         android:padding="4dp"
-        android:text="@string/question_article" />
+        android:text="This is a simple Fragment,\nAll ok so far?" />
 
     <RadioGroup
         android:id="@+id/radio_group"

@@ -9,6 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FragmentCodeLab">
+        <activity
+            android:name=".SwipeNavActivity"
+            android:exported="true" />
+        <activity
+            android:name=".TabFragmentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AnotherFragmentExample"
+            android:exported="true" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
