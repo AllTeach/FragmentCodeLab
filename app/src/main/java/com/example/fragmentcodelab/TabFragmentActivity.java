@@ -32,8 +32,9 @@ public class TabFragmentActivity extends FragmentActivity {
 
         // Set the adapter onto
         // the view pager
+        String[] arr = {"Dog","Login"};
         viewPager.setAdapter(adapter);
-        new TabLayoutMediator(tabLayout,viewPager,(tab, position) -> tab.setText("TAB " + (position + 1))
+        new TabLayoutMediator(tabLayout,viewPager,(tab, position) -> tab.setText("TAB " + arr[position])//(position + 1))
         ).attach();
 
 

@@ -1,3 +1,2 @@
-package com.example.fragmentcodelab;
-
-
+package com.example.fragmentcodelab;public class TabAdapter {
+}

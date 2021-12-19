@@ -32,21 +32,20 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-
-      //  SimpleFragment simpleFragment = new SimpleFragment();
         // Get the FragmentManager and start a transaction.
-
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager
                 .beginTransaction();
-
 
         // Add fragment to the back stack
         // back button triggers fragment transaction
         fragmentTransaction.add(R.id.fragment_container,
                 SimpleFragment.class,null)
-                .setReorderingAllowed(true).addToBackStack(null).commit();
+                .setReorderingAllowed(true)
+                .addToBackStack(null)
+                .commit();
+
+
         // Update the Button text.
         mButton.setText("close fragment");
     // Set boolean flag to indicate fragment is open.
